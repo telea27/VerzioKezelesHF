@@ -11,18 +11,19 @@ namespace VerzioKezelesHF
         static void Main(string[] args)
         {
             int szam;
+            int atlag;
+            int ossz=0;
             List<int> lista = new List<int>();
             do
             {
                 Console.WriteLine("Kérek egy számot");
                 szam = Convert.ToInt32(Console.ReadLine());
                 lista.Add(szam);
+                ossz += szam;
+                atlag = ossz / 10;
             }
             while (lista.Count!=10);
-            foreach (var item in lista)
-            {
-                Console.Write(item+" ");
-            }
+            Console.WriteLine("Átlag: "+atlag);
 
             Console.ReadKey();
 
