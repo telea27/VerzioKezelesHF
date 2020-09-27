@@ -41,6 +41,16 @@ namespace VerzioKezelesHF
                 }
             }
             Console.WriteLine("A legnagyobb elem: "+max);
+            min = lista[0];
+            for (int i = 0; i < lista.Count; i++)
+            {
+
+                if (min> lista[i])
+                {
+                    min = lista[i];
+                }
+            }
+            Console.WriteLine("A legkisebb elem: " + min);
 
             Console.ReadKey();
 
