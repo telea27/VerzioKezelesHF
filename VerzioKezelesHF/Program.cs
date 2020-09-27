@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace VerzioKezelesHF
             int szam;
             int atlag;
             int ossz=0;
+            int max;
+            int min;
             List<int> lista = new List<int>();
             Console.WriteLine("Hány db számot kér?");
             db = Convert.ToInt32(Console.ReadLine());
@@ -24,10 +27,20 @@ namespace VerzioKezelesHF
                 szam = Convert.ToInt32(Console.ReadLine());
                 lista.Add(szam);
                 ossz += szam;
-                atlag = ossz / 10;
+                atlag = ossz / db;
             }
             while (lista.Count!=db);
             Console.WriteLine("Átlag: "+atlag);
+            max = lista[0];
+            for (int i = 0; i < lista.Count; i++)
+            {
+               
+                if (max<lista[i])
+                {
+                    max = lista[i];
+                }
+            }
+            Console.WriteLine("A legnagyobb elem: "+max);
 
             Console.ReadKey();
 
